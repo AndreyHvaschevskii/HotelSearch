@@ -19,7 +19,7 @@ public class HibernateHotelStorage {
     public List<Hotel> findHotelByCountry(Country country) {
         Session session = sessionFactory.openSession();
         List<Hotel> allHotelByCountry = session
-                .createQuery("from Hotel where user = :user", Hotel.class)
+                .createQuery("from Hotel where country = :country", Hotel.class)
                 .setParameter("country", country)
                 .getResultList();
         session.close();
