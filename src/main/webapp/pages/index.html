@@ -11,29 +11,50 @@
 <body>
 <div class="wrapper">
     <div class="header">
-        <div class="top">
-            <div class="logo">
-                <img src="/static/img/hotelsearch.png" style="width: 175px;">
-            </div>
-            <div class="form">
-                <form th:action="@{/search}" th:object="${user}" method="post">
-                    <div class="form">
-                        <div class="search">
-                            <p>Enter country</p>
-                            <input type="text" th:object="${country}" placeholder="Enter country">
-                            <p>Enter date from</p>
-                            <input type="date" th:id="${#dates}">
-                            <p>Enter date to</p>
-                            <input type="date" th:id="${#dates}">
-                            <p>Enter the number of people</p>
-                            <input type="number" size="3" name="num" min="0" max="10" value="1">
-                            <button class="btn">Search</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <img src="/static/img/hotelsearch.png" style="width: 175px;">
     </div>
+    <form th:action="@{/search}" th:object="${user}" method="post">
+        <div class="search">
+            <input type="text" th:object="${country}" placeholder="What are you looking for?">
+            <input type="date" th:id="${#dates}">
+            <input type="date" th:id="${#dates}">
+            <input type="number" min="0" max="10" placeholder="Person">
+            <button class="btn">Search</button>
+        </div>
+    </form>
 </div>
 </body>
+<style>
+
+    body {
+        background: url("/static/img/background.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .wrapper .header {
+        display: inline-block;
+        max-width: 180px;
+        width: 100%;
+        height: 50px;
+        margin: 10% 0% 2% 45%;
+        background: #ffffff;
+        border: 1px solid #041d67;
+        border-radius: 20px;
+        padding: 20px 10px 10px;
+    }
+
+    .wrapper .search {
+        display: inline-block;
+        margin: 0% 0% 0% 35%;
+        background: #ffffff;
+        border: 1px solid #041d67;
+        border-radius: 40px;
+        padding: 20px 20px 20px;
+    }
+
+    .wrapper .search button {
+        color: #0739a2;
+    }
+
+</style>
 </html>

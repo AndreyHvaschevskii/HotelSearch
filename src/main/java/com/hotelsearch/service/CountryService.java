@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CountryService {
-    @Autowired
+    /*@Autowired
     private final CountryStorage countryStorage;
 
     public CountryService(CountryStorage countryStorage) {
@@ -16,5 +16,5 @@ public class CountryService {
 
     public Country findHotelByCountry(String name) {
         return countryStorage.findHotelByCountry(name);
-    }
+    }*/
 }
