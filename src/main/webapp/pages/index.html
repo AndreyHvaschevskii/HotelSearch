@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HotelSearch Home Page</title>
+    <link rel="stylesheet" href="/static/style/index.css">
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="top">
+            <div class="logo">
+                <img src="/static/img/hotelsearch.png" style="width: 175px;">
+            </div>
+            <div class="form">
+                <form th:action="@{/search}" th:object="${user}" method="post">
+                    <div class="form">
+                        <div class="search">
+                            <p>Enter country</p>
+                            <input type="text" th:object="${country}" placeholder="Enter country">
+                            <p>Enter date from</p>
+                            <input type="date" th:id="${#dates}">
+                            <p>Enter date to</p>
+                            <input type="date" th:id="${#dates}">
+                            <p>Enter the number of people</p>
+                            <input type="number" size="3" name="num" min="0" max="10" value="1">
+                            <button class="btn">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

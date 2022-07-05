@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HotelSearch Reg Page</title>
+    <link rel="stylesheet" href="/static/style/sign-up.css">
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="top">
+            <div class="logo">
+                <img src="/static/img/hotelsearch.png" style="width: 175px;">
+            </div>
+            <div class="form">
+                <form th:action="@{/registration}" th:object="${user}" method="post">
+                    <div class="input_field">
+                        <input type="text" th:field="*{email}" placeholder="Phone number or email"
+                               class="input">
+                    </div>
+                    <div class="input_field">
+                        <input type="text" th:field="*{name}" placeholder="Full Name" class="input">
+                    </div>
+                    <div class="input_field">
+                        <input type="text" th:field="*{login}" placeholder="Username" class="input">
+                    </div>
+                    <div class="input_field">
+                        <input type="password" th:field="*{password}" placeholder="Password" class="input">
+                    </div>
+                    <button class="btn">Registration</button>
+                </form>
+            </div>
+        </div>
+        <p th:if="!${#strings.isEmpty(message)}" th:text="${message}"></p>
+        <p th:if="!${#lists.isEmpty(messages)}">Problems with registration:</p>
+        <table th:if="!${#lists.isEmpty(messages)}" th:each="messageError:${messages}">
+            <tr>
+                <td>
+                    <p th:text="${messageError}"></p>
+                </td>
+            </tr>
+        </table>
+        <div class="signup">
+            <p>Have an account? <a href="auth">Log in</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
