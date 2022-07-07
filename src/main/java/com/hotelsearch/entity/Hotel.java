@@ -17,8 +17,7 @@ public class Hotel {
     private String name;
     private String rating;
     private boolean wifi;
-    private boolean condition;
+    private boolean air_condition;
     private boolean toilet;
     private boolean shower;
-
 }

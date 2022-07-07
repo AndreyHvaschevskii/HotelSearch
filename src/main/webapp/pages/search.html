@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/static/style/search.css">
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="header">
+        <img src="/static/img/hotelsearch.png" style="width: 175px;">
+    </div>
+    <form modelAttribute="country, date1, date2, person" action="search.html">
+        <p path="country">Country: </p>
+        <p path="date1">Date from:</p>
+        <p path="date2">Date to:</p>
+        <p path="person">Person:</p>
+        <hr>
+    </form>
+</body>
+</html>
