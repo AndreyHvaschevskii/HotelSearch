@@ -12,7 +12,7 @@
     <div class="header">
         <img src="/static/img/hotelsearch.png" style="width: 175px;">
     </div>
-    <form method="post" modelAttribute="country, date1, date2, person" action="search.html">
+    <form method="post" modelAttribute="country, date1, date2, person">
         <div class="search">
             <input type="text" list="country" th:path="country" placeholder="What are you looking for?">
             <datalist id="country">
@@ -27,7 +27,7 @@
             <input type="date" th:path="date1">
             <input type="date" th:path="date2">
             <input type="number" th:path="person" style="width: 5em" min="0" max="10" placeholder="Person">
-            <button class="btn"> <a href="search.html">Search</a></button>
+            <button class="btn"> <a href="search">Search</a></button>
         </div>
     </form>
 </div>
